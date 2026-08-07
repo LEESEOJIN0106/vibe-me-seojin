@@ -1,7 +1,32 @@
 const showBtn = document.querySelector('#contactBTN');
 const closeBtn = document.querySelector('#closeBtn');
-const title = document.querySelector('h1');
+const themeToggle = document.querySelector('#themeToggle');
 const modal = document.querySelector('#modal');
+const root = document.documentElement;
+
+const THEME_KEY = 'theme';
+
+function getPreferredTheme() {
+    const saved = localStorage.getItem(THEME_KEY);
+    if (saved === 'light' || saved === 'dark') return saved;
+    return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+}
+
+function applyTheme(theme) {
+    root.setAttribute('data-theme', theme);
+    localStorage.setItem(THEME_KEY, theme);
+    themeToggle.setAttribute(
+        'aria-label',
+        theme === 'dark' ? '라이트모드로 전환' : '다크모드로 전환'
+    );
+}
+
+applyTheme(getPreferredTheme());
+
+themeToggle.addEventListener('click', () => {
+    const next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+    applyTheme(next);
+});
 
 function openModal() {
     modal.classList.add('is-open');
@@ -15,7 +40,6 @@ function closeModal() {
 
 showBtn.addEventListener('click', () => {
     openModal();
-    title.textContent = '반갑습니다! ^^';
 });
 
 closeBtn.addEventListener('click', closeModal);
