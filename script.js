@@ -1,5 +1,4 @@
 const showBtn = document.querySelector('#contactBTN');
-const hideBtn = document.querySelector('#hideContactBTN');
 const closeBtn = document.querySelector('#closeBtn');
 const title = document.querySelector('h1');
 const modal = document.querySelector('#modal');
@@ -17,11 +16,6 @@ function closeModal() {
 showBtn.addEventListener('click', () => {
     openModal();
     title.textContent = '반갑습니다! ^^';
-});
-
-hideBtn.addEventListener('click', () => {
-    closeModal();
-    title.textContent = '이서진';
 });
 
 closeBtn.addEventListener('click', closeModal);
