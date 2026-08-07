@@ -7,7 +7,7 @@
 
 /* 브랜드·텍스트·배경 색을 변수로 모아 한곳에서 관리 */
 :root {
-    --brand: #6C5CE7;
+    --brand: #333;
     --text: #333;
     --text-muted: #333;
     --bg: #f0f0f5;
@@ -110,7 +110,7 @@ h1 {
 
 /* 연락처 버튼: 브랜드색 배경, 흰 글자 */
 .btn {
-    background: #333;
+    background: var(--brand);
     color: #fff;
     border: none;
     border-radius: 999px;
@@ -123,9 +123,9 @@ h1 {
 
 /* 버튼 hover 시 배경색 변환 + 살짝 떠오름 */
 .btn:hover {
-    background: #111;
+    background: #5641e0;
     transform: translateY(-2px);
-    box-shadow: 0 10px 24px rgba(51, 51, 51, 0.35);
+    box-shadow: 0 10px 24px rgba(108, 92, 231, 0.35);
 }
 
 /* 모달 배경: 평소엔 숨기고, 열릴 때 부드럽게 페이드 인 */
