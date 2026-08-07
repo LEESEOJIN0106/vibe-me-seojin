@@ -1,2 +1,2 @@
 # vibe-me-seojin
-명함^^
+https://vibe-seojin.netlify.app/
