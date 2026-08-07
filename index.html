@@ -3,11 +3,61 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>이서진</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+    <main class="card">
+        <header>
+            <img
+                class="avatar"
+                src="https://i.namu.wiki/i/NZapTHbaokMPIjLEBQk_1VB-qFsRFMPfkyRHkhg46k2eyOSFGe1QuTgyongpLfr26pvdWYsd__kKo1kKepKfovg7CqT2USNPDNQ5ryeSkG2mUMHLt7QK-rXlgG98uJe0M3V3eD9tJ5t_G-XLnJbn8Q.webp"
+                alt="이서진 프로필 사진"
+            />
+            <h1>이서진</h1>
+            <p class="role">동국대 컴퓨터AI학부</p>
+        </header>
 
+        <section class="bio">
+            <p>
+                <span class="baduk-icon" aria-hidden="true">
+                    <i class="fa-solid fa-circle"></i>
+                    <i class="fa-regular fa-circle"></i>
+                </span>
+                바둑을 두는 것을 좋아합니다.
+            </p>
+        </section>
+
+        <nav class="links">
+            <a href="https://github.com/LEESEOJIN0106" target="_blank" rel="noopener noreferrer">
+                <i class="fa-brands fa-github" aria-hidden="true"></i> GitHub
+            </a>
+            <a href="https://www.instagram.com/seojin7200/" target="_blank" rel="noopener noreferrer">
+                <i class="fa-brands fa-instagram" aria-hidden="true"></i> Instagram
+            </a>
+        </nav>
+
+        <div class="actions">
+            <button class="btn" id="contactBTN">연락처 보기</button>
+            <button class="btn" id="hideContactBTN">연락처 숨기기</button>
+        </div>
+
+        <footer>2026 Seojin Lee</footer>
+    </main>
+
+    <div class="modal" id="modal" aria-hidden="true">
+        <div class="modal__box" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+            <h2 id="modalTitle">연락처</h2>
+            <p>xleeboy002@gmail.com</p>
+            <button class="btn" id="closeBtn">닫기</button>
+        </div>
+    </div>
+
+    <script src="https://kit.fontawesome.com/b39abfc2eb.js" crossorigin="anonymous"></script>
     <script src="script.js"></script>
 </body>
 </html>
