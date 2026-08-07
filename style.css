@@ -1,3 +1,171 @@
+/* 모든 요소의 기본 여백을 제거하고 박스 크기 계산을 border-box로 통일 */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* 브랜드·텍스트·배경 색을 변수로 모아 한곳에서 관리 */
+:root {
+    --brand: #6C5CE7;
+    --text: #333;
+    --text-muted: #333;
+    --bg: #f0f0f5;
+    --card-bg: #ffffff;
+}
+
+/* 페이지 전체 배경색과 기본 글꼴·글자색 설정 */
 body {
-    background: #454543;
+    min-height: 100vh; /* 화면 전체 높이만큼 body를 키워 세로 중앙 정렬이 가능하게 함 */
+    display: flex; /* 카드를 flex 아이템으로 다루기 위해 flex 컨테이너로 만듦 */
+    justify-content: center; /* 가로 방향 정중앙에 카드 배치 */
+    align-items: center; /* 세로 방향 정중앙에 카드 배치 */
+
+    background: var(--bg);
+    color: var(--text);
+    font-family: "Do Hyeon", sans-serif;
+}
+
+/* 페이지 진입 시 카드가 아래에서 부드럽게 올라오며 나타남 */
+@keyframes card-in {
+    from {
+        opacity: 0;
+        transform: translateY(16px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* 명함 카드: 흰 배경, 안쪽 여백, 둥근 모서리, 은은한 그림자 */
+.card {
+    width: 100%;
+    max-width: 420px;
+    padding: 40px 32px;
+    background: #ffffff;
+    border-radius: 24px;
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.08);
+    animation: card-in 0.6s ease both; /* 페이지 로드 시 부드러운 등장 */
+}
+
+/* 글자 드래그 선택 시 브랜드색 하이라이트 */
+::selection {
+    background: var(--brand);
+    color: #ffffff;
+}
+
+/* 이름(h1): 가장 큰 제목 위계 — 30px, 굵기 700 */
+h1 {
+    font-size: 30px;
+    font-weight: 700;
+}
+
+/* 역할/소속(.role): 작은 보조 텍스트 — 14px, 흐린 색 */
+.role {
+    font-size: 14px;
+    color: var(--text-muted);
+}
+
+/* 소개글(.bio): 본문 크기 15px, 줄간격 1.6 */
+.bio {
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+/* 프로필 사진을 원형으로 자르고 테두리 적용 */
+.avatar {
+    width: 96px;
+    height: 96px;
+    border-radius: 50%; /* 원형 프로필 */
+    object-fit: cover; /* 이미지가 원 안에 꽉 차도록 */
+    border: 2px solid #333;
+}
+
+/* 링크들을 가로 한 줄로 배치 */
+.links {
+    display: flex; /* 링크들을 가로로 나란히 배치 */
+    justify-content: center; /* 링크들을 가운데 정렬 */
+    gap: 20px; /* 링크 사이 간격을 gap으로 설정 */
+}
+
+/* 링크 색을 브랜드색으로, 밑줄 제거 */
+.links a {
+    color: #333;
+    text-decoration: none; /* 밑줄 제거 */
+    transition: color 0.15s ease;
+}
+
+/* 링크에 마우스를 올리면 색이 진해짐 */
+.links a:hover {
+    color: #111;
+}
+
+/* 버튼 두 개를 가로로 가운데 정렬 */
+.actions {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+}
+
+/* 연락처 버튼: 브랜드색 배경, 흰 글자 */
+.btn {
+    background: #333;
+    color: #fff;
+    border: none;
+    border-radius: 999px;
+    padding: 15px 32px;
+    font-family: inherit; /* body 글꼴을 그대로 상속 */
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.15s ease, transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+/* 버튼 hover 시 배경색 변환 + 살짝 떠오름 */
+.btn:hover {
+    background: #111;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 24px rgba(51, 51, 51, 0.35);
+}
+
+/* 모달 배경: 평소엔 숨기고, 열릴 때 부드럽게 페이드 인 */
+.modal {
+    position: fixed;
+    inset: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 0.25s ease, visibility 0.25s ease;
+}
+
+/* 모달 열림 상태 */
+.modal.is-open {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+
+/* 모달 박스: 살짝 아래에서 올라오며 등장 */
+.modal__box {
+    background: #fff;
+    padding: 32px;
+    border-radius: 20px;
+    transform: translateY(12px) scale(0.96);
+    opacity: 0;
+    transition: transform 0.25s ease, opacity 0.25s ease;
+}
+
+.modal.is-open .modal__box {
+    transform: translateY(0) scale(1);
+    opacity: 1;
+}
+
+/* 푸터: 작은 흐린 글씨 */
+footer {
+    font-size: 13px;
+    color: var(--text-muted);
 }
