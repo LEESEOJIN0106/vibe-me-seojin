@@ -439,6 +439,11 @@ h1 {
     color: var(--text-muted);
 }
 
+.modal__box a {
+    color: var(--text);
+    text-decoration: underline;
+}
+
 /* 푸터 */
 footer {
     font-size: 13px;
