@@ -77,8 +77,7 @@ body {
     inset: 0;
     background:
         var(--scene-overlay),
-        url("https://images.unsplash.com/photo-1517299321609-52687d1bc55a?auto=format&fit=crop&w=1920&q=80")
-            center / cover no-repeat;
+        url("bg-village.jpg") center / cover no-repeat;
     transition: filter 0.45s var(--ease-out);
 }
 
