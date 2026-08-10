@@ -5,18 +5,88 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- 검색엔진용 -->
-    <title>이서진 · 바이브 미</title>
-    <meta name="description" content="안녕하세요 이서진입니다. 동국대 컴퓨터AI학부 · 바둑을 두는 것을 좋아합니다." />
+    <title>이서진 · 바이브 미 | 동국대 컴퓨터AI학부</title>
+    <meta name="description" content="안녕하세요 이서진입니다. 동국대 컴퓨터AI학부 학생이며 바둑을 두는 것을 좋아합니다. GitHub와 Instagram에서 만나보세요." />
+    <meta name="keywords" content="이서진, 바이브 미, vibe me, 동국대, 컴퓨터AI학부, 바둑, 명함, 포트폴리오" />
+    <meta name="author" content="이서진" />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+    <meta name="googlebot" content="index, follow" />
+    <link rel="canonical" href="https://vibe-seojin.netlify.app/" />
+    <link rel="sitemap" type="application/xml" title="Sitemap" href="https://vibe-seojin.netlify.app/sitemap.xml" />
 
     <!-- SNS 공유 카드용 (카톡·슬랙·페북·인스타) -->
     <meta property="og:title"       content="이서진 · 바이브 미" />
-    <meta property="og:description" content="안녕하세요 이서진입니다" />
+    <meta property="og:description" content="안녕하세요 이서진입니다. 동국대 컴퓨터AI학부 · 바둑을 좋아하는 사람" />
     <meta property="og:image"       content="https://vibe-seojin.netlify.app/og.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt"   content="안녕하세요 이서진입니다" />
     <meta property="og:url"         content="https://vibe-seojin.netlify.app/" />
     <meta property="og:type"        content="website" />
+    <meta property="og:site_name"   content="이서진 · 바이브 미" />
+    <meta property="og:locale"      content="ko_KR" />
 
     <!-- 트위터/X용 -->
     <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="이서진 · 바이브 미" />
+    <meta name="twitter:description" content="안녕하세요 이서진입니다. 동국대 컴퓨터AI학부 · 바둑을 좋아하는 사람" />
+    <meta name="twitter:image" content="https://vibe-seojin.netlify.app/og.png" />
+
+    <!-- 구조화 데이터 (구글 리치 결과용) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebSite",
+          "@id": "https://vibe-seojin.netlify.app/#website",
+          "url": "https://vibe-seojin.netlify.app/",
+          "name": "이서진 · 바이브 미",
+          "description": "동국대 컴퓨터AI학부 이서진의 온라인 명함",
+          "inLanguage": "ko-KR",
+          "publisher": {
+            "@id": "https://vibe-seojin.netlify.app/#person"
+          }
+        },
+        {
+          "@type": "Person",
+          "@id": "https://vibe-seojin.netlify.app/#person",
+          "name": "이서진",
+          "alternateName": "Seojin Lee",
+          "url": "https://vibe-seojin.netlify.app/",
+          "image": "https://vibe-seojin.netlify.app/avatar.png",
+          "email": "mailto:xleeboy002@gmail.com",
+          "jobTitle": "학생",
+          "affiliation": {
+            "@type": "CollegeOrUniversity",
+            "name": "동국대학교",
+            "department": "컴퓨터AI학부"
+          },
+          "description": "바둑을 두는 것을 좋아합니다.",
+          "sameAs": [
+            "https://github.com/LEESEOJIN0106",
+            "https://www.instagram.com/seojin7200/"
+          ]
+        },
+        {
+          "@type": "ProfilePage",
+          "@id": "https://vibe-seojin.netlify.app/#profilepage",
+          "url": "https://vibe-seojin.netlify.app/",
+          "name": "이서진 · 바이브 미",
+          "isPartOf": {
+            "@id": "https://vibe-seojin.netlify.app/#website"
+          },
+          "about": {
+            "@id": "https://vibe-seojin.netlify.app/#person"
+          },
+          "mainEntity": {
+            "@id": "https://vibe-seojin.netlify.app/#person"
+          },
+          "inLanguage": "ko-KR"
+        }
+      ]
+    }
+    </script>
 
     <!-- 파비콘 (절대경로: 모바일·공유 미리보기용) -->
     <link rel="icon" href="https://vibe-seojin.netlify.app/favicon.ico" sizes="any">
@@ -55,7 +125,7 @@
         <i class="fa-solid fa-sun" aria-hidden="true"></i>
     </button>
 
-    <main class="card">
+    <main class="card" itemscope itemtype="https://schema.org/Person">
         <header>
             <img
                 class="avatar"
@@ -64,13 +134,14 @@
                 width="96"
                 height="96"
                 decoding="async"
+                itemprop="image"
             />
-            <h1>이서진</h1>
-            <p class="role">동국대 컴퓨터AI학부</p>
+            <h1 itemprop="name">이서진</h1>
+            <p class="role" itemprop="affiliation">동국대 컴퓨터AI학부</p>
         </header>
 
-        <section class="bio">
-            <p>
+        <section class="bio" aria-label="소개">
+            <p itemprop="description">
                 <span class="baduk-icon" aria-hidden="true">
                     <i class="fa-solid fa-circle"></i>
                     <i class="fa-regular fa-circle"></i>
@@ -79,27 +150,31 @@
             </p>
         </section>
 
-        <nav class="links">
-            <a href="https://github.com/LEESEOJIN0106" target="_blank" rel="noopener noreferrer">
+        <nav class="links" aria-label="소셜 링크">
+            <a href="https://github.com/LEESEOJIN0106" target="_blank" rel="noopener noreferrer me" itemprop="sameAs" aria-label="이서진 GitHub">
                 <i class="fa-brands fa-github" aria-hidden="true"></i> GitHub
             </a>
-            <a href="https://www.instagram.com/seojin7200/" target="_blank" rel="noopener noreferrer">
+            <a href="https://www.instagram.com/seojin7200/" target="_blank" rel="noopener noreferrer me" itemprop="sameAs" aria-label="이서진 Instagram">
                 <i class="fa-brands fa-instagram" aria-hidden="true"></i> Instagram
             </a>
         </nav>
 
         <div class="actions">
-            <button class="btn" id="contactBTN">연락처 보기</button>
+            <button class="btn" id="contactBTN" type="button" aria-haspopup="dialog" aria-controls="modal">연락처 보기</button>
         </div>
 
-        <footer>2026 Seojin Lee</footer>
+        <footer>
+            <small>&copy; 2026 <span itemprop="name">Seojin Lee</span></small>
+        </footer>
     </main>
 
     <div class="modal" id="modal" aria-hidden="true">
         <div class="modal__box" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
             <h2 id="modalTitle">연락처</h2>
-            <p>xleeboy002@gmail.com</p>
-            <button class="btn" id="closeBtn">닫기</button>
+            <p>
+                <a href="mailto:xleeboy002@gmail.com" itemprop="email">xleeboy002@gmail.com</a>
+            </p>
+            <button class="btn" id="closeBtn" type="button">닫기</button>
         </div>
     </div>
 
